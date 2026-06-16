@@ -1,0 +1,8 @@
+/* dashboard.css */
+.task-list { display: flex; flex-direction: column; gap: 10px; }
+.task-item { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 10px; font-size: 13.5px; }
+.task-item.yellow { background: #fff9e6; }
+.task-item.blue { background: #e8f0fe; }
+.task-icon { font-size: 16px; }
+.task-text { flex: 1; color: #333; font-weight: 500; }
+.task-count { font-size: 12px; font-weight: 700; color: #888; background: #fff; padding: 3px 10px; border-radius: 20px; }

@@ -1,0 +1,9 @@
+/* technician.css */
+.install-detail { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+.detail-grid { flex: 1; }
+.detail-row { display: flex; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 1px solid #f2f2f2; }
+.detail-row:last-child { border-bottom: none; }
+.dl { color: #888; font-size: 13px; width: 150px; flex-shrink: 0; }
+.dv { color: #222; font-size: 14px; font-weight: 500; }
+.detail-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
+.detail-btns button { min-width: 130px; }

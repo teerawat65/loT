@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระบบอัตโนมัติ (Scheduler Bot)</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/scheduler.css">
+</head>
+<body>
+<div class="page-layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo" style="font-size:13px">ระบบอัตโนมัติ (Scheduler Bot)</div>
+    <nav>
+      <a href="#" class="nav-item">🏠 หน้าหลัก</a>
+      <a href="#" class="nav-item active">🕐 ตั้งเวลาส่งแบบสอบถาม</a>
+      <a href="#" class="nav-item">💬 ข้อความอัตโนมัติ</a>
+      <a href="#" class="nav-item">📊 ประวัติการส่งข้อความ</a>
+      <a href="#" class="nav-item">🔔 การแจ้งเตือน</a>
+      <a href="#" class="nav-item">⚙️ ตั้งค่าระบบ</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="../index.html" class="nav-item danger">🚪 ออกจากระบบ</a>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="page-content">
+    <div class="topbar">
+      <div class="topbar-title"></div>
+      <div class="topbar-right">
+        <div style="display:flex;align-items:center;gap:8px;background:#e8f0fe;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;color:#1a73e8">
+          🤖 Scheduler Bot
+        </div>
+      </div>
+    </div>
+
+    <div class="main-scroll">
+      <div class="sched-layout">
+
+        <!-- Left: Form -->
+        <div class="sched-form-area">
+          <div class="card">
+            <div class="section-title">ตั้งเวลาส่งแบบสอบถาม</div>
+
+            <div class="form-group">
+              <label>เลือกกลุ่มลูกค้า</label>
+              <select class="form-control">
+                <option>ลูกค้าติดตั้งแล้ว</option>
+                <option>ลูกค้าใหม่</option>
+                <option>ลูกค้าทั้งหมด</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>รอบเวลาส่ง</label>
+              <select class="form-control">
+                <option>หลังติดตั้ง 7 วัน</option>
+                <option>หลังติดตั้ง 30 วัน</option>
+                <option>หลังติดตั้ง 90 วัน</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>วันที่เริ่มต้น</label>
+              <div class="input-icon-wrap">
+                <input type="date" class="form-control" value="2024-05-15">
+                <span class="input-icon">📅</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>เวลา</label>
+              <div class="input-icon-wrap">
+                <input type="time" class="form-control" value="10:00">
+                <span class="input-icon">🕐</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>ข้อความที่ส่ง</label>
+              <textarea class="form-control" rows="5" id="msgTemplate">สวัสดีค่ะ คุณ {customer_name} ระบบขอสอบถามการใช้งานอุปกรณ์ของคุณ ใช้งานเป็นอย่างไรบ้างคะ มีปัญหาหรือไม่ หากมีปัญหากดปุ่มติดต่อช่างได้เลย ขอบคุณค่ะ</textarea>
+            </div>
+
+            <div class="form-btns">
+              <button class="btn-primary" onclick="saveSched()">บันทึก</button>
+              <button class="btn-secondary">ยกเลิก</button>
+            </div>
+          </div>
+
+          <!-- History Table -->
+          <div class="card" style="margin-top:20px">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+              <div class="section-title" style="margin-bottom:0">ประวัติการส่งล่าสุด</div>
+              <a href="#" style="font-size:13px;color:#1a73e8;text-decoration:none">ดูทั้งหมด</a>
+            </div>
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>วันที่ส่ง</th>
+                  <th>กลุ่มลูกค้า</th>
+                  <th>รอบเวลา</th>
+                  <th>สถานะ</th>
+                  <th>จำนวนส่ง</th>
+                  <th>ตอบกลับ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>15/05/2567 10:00</td>
+                  <td>ลูกค้าติดตั้งแล้ว</td>
+                  <td>หลังติดตั้ง 7 วัน</td>
+                  <td><span class="badge green">ส่งสำเร็จ</span></td>
+                  <td>120</td>
+                  <td>45 (37.50%)</td>
+                </tr>
+                <tr>
+                  <td>08/05/2567 10:00</td>
+                  <td>ลูกค้าติดตั้งแล้ว</td>
+                  <td>หลังติดตั้ง 7 วัน</td>
+                  <td><span class="badge green">ส่งสำเร็จ</span></td>
+                  <td>98</td>
+                  <td>32 (32.65%)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right: Preview -->
+        <div class="sched-preview-area">
+          <div class="card preview-card">
+            <div class="section-title">ตัวอย่างข้อความ</div>
+            <div class="chat-preview">
+              <div class="preview-bot-row">
+                <div class="preview-bot-avatar">🤖</div>
+                <div class="preview-bubble" id="previewBubble">
+                  สวัสดีค่ะ คุณสมชาย<br>
+                  ระบบขอสอบถามการใช้งานอุปกรณ์ของคุณ<br><br>
+                  ใช้งานเป็นอย่างไรบ้างคะ<br>
+                  มีปัญหาหรือไม่<br><br>
+                  หากมีปัญหากดปุ่มติดต่อช่างได้เลย ขอบคุณค่ะ
+                  <div class="msg-time">10:00</div>
+                </div>
+              </div>
+              <div class="preview-action-btns">
+                <button class="preview-btn blue">ติดต่อช่าง</button>
+                <button class="preview-btn gray">ไม่มีปัญหา</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Success Toast -->
+<div id="toast" class="toast" style="display:none">✅ บันทึกตารางส่งข้อความเรียบร้อยแล้ว</div>
+
+<script>
+function saveSched() {
+  const toast = document.getElementById('toast');
+  toast.style.display = 'block';
+  setTimeout(() => { toast.style.display = 'none'; }, 2500);
+}
+
+// Live preview update
+document.getElementById('msgTemplate').addEventListener('input', function() {
+  const text = this.value.replace('{customer_name}', 'สมชาย').replace(/\n/g, '<br>');
+  document.getElementById('previewBubble').innerHTML = text + '<div class="msg-time">10:00</div>';
+});
+</script>
+</body>
+</html>

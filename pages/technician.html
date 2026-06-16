@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ระบบช่างติดตั้ง</title>
+<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="../css/technician.css">
+</head>
+<body>
+<div class="page-layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-logo">ระบบช่างติดตั้ง</div>
+    <nav>
+      <a href="#" class="nav-item active">🏠 หน้าหลัก</a>
+      <a href="#" class="nav-item">📋 งานติดตั้ง</a>
+      <a href="#" class="nav-item">📝 บันทึกผลการติดตั้ง</a>
+      <a href="#" class="nav-item">🔧 รายการซ่อม/แก้ไข</a>
+      <a href="#" class="nav-item">✅ ลูกค้าที่รับมอบขอบ</a>
+      <a href="#" class="nav-item">⏱ ประวัติการทำงาน</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <a href="index.html" class="nav-item danger">🚪 ออกจากระบบ</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="page-content">
+    <div class="topbar">
+      <div class="topbar-title">งานที่ได้รับมอบหมาย</div>
+      <div class="topbar-right">
+        <span>🔔</span>
+        <div class="avatar-sm">ช่อ</div>
+        <span style="font-size:13px;font-weight:600">ช่างเอก</span>
+      </div>
+    </div>
+
+    <div class="main-scroll">
+
+      <!-- Jobs Table -->
+      <div class="card" style="margin-bottom:20px">
+        <div class="section-title">งานที่ได้รับมอบหมาย</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ลำดับ</th>
+              <th>ลูกค้า</th>
+              <th>สถานที่</th>
+              <th>ประเภทงาน</th>
+              <th>วันที่นัดหมาย</th>
+              <th>สถานะ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>คุณสมชาย ใจดี</td>
+              <td>12/3 หมู่ 2</td>
+              <td>Solar Inverter 5kW</td>
+              <td>15/05/2567 09:00</td>
+              <td><span class="badge orange">รอดำเนินการ</span></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>คุณวรรณา แก้วดี</td>
+              <td>88/1 หมู่ 5</td>
+              <td>Solar Inverter 3kW</td>
+              <td>15/05/2567 13:00</td>
+              <td><span class="badge orange">รอดำเนินการ</span></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>คุณชนพล มีสุข</td>
+              <td>45/6 หมู่ 1</td>
+              <td>Solar Inverter 5kW</td>
+              <td>16/05/2567 09:00</td>
+              <td><span class="badge green">ดำเนินการแล้ว</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Install Log -->
+      <div class="card">
+        <div class="section-title">บันทึกผลการติดตั้งล่าสุด</div>
+        <div class="install-detail">
+          <div class="detail-grid">
+            <div class="detail-row"><span class="dl">ลูกค้า</span><span class="dv">คุณสมชาย ใจดี</span></div>
+            <div class="detail-row"><span class="dl">อุปกรณ์</span><span class="dv">Solar Inverter 5kW</span></div>
+            <div class="detail-row"><span class="dl">วันที่ติดตั้ง</span><span class="dv">15/05/2567 09:30</span></div>
+            <div class="detail-row">
+              <span class="dl">สถานะการติดตั้ง</span>
+              <span class="badge green">ติดตั้งสำเร็จ</span>
+            </div>
+            <div class="detail-row"><span class="dl">หมายเหตุ</span><span class="dv">ทำงานปกติ</span></div>
+          </div>
+          <div class="detail-btns">
+            <button class="btn-primary" onclick="openDetailModal()">ดูรายละเอียด</button>
+            <button class="btn-secondary" onclick="openEditModal()">แก้ไขข้อมูล</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Detail Modal -->
+<div id="detailModal" class="modal" style="display:none">
+  <div class="modal-box" style="max-width:480px">
+    <h3>รายละเอียดการติดตั้ง</h3>
+    <table style="width:100%;margin-top:12px;font-size:13.5px;border-collapse:collapse">
+      <tr><td style="padding:7px 0;color:#888;width:140px">ลูกค้า</td><td>คุณสมชาย ใจดี</td></tr>
+      <tr><td style="padding:7px 0;color:#888">ที่อยู่</td><td>12/3 หมู่ 2 ต.ศรีสาคร อ.เมือง จ.เชียงใหม่</td></tr>
+      <tr><td style="padding:7px 0;color:#888">เบอร์โทร</td><td>081-234-5678</td></tr>
+      <tr><td style="padding:7px 0;color:#888">อุปกรณ์</td><td>Solar Inverter 5kW</td></tr>
+      <tr><td style="padding:7px 0;color:#888">Serial No.</td><td>SLR-2024-001234</td></tr>
+      <tr><td style="padding:7px 0;color:#888">วันที่ติดตั้ง</td><td>15/05/2567 09:30</td></tr>
+      <tr><td style="padding:7px 0;color:#888">ช่างติดตั้ง</td><td>ช่างเอก</td></tr>
+      <tr><td style="padding:7px 0;color:#888">สถานะ</td><td><span class="badge green">ติดตั้งสำเร็จ</span></td></tr>
+    </table>
+    <div class="modal-btns">
+      <button class="btn-cancel" onclick="closeModal('detailModal')">ปิด</button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit Modal -->
+<div id="editModal" class="modal" style="display:none">
+  <div class="modal-box" style="max-width:440px">
+    <h3>แก้ไขข้อมูลการติดตั้ง</h3>
+    <div style="margin-top:14px;display:flex;flex-direction:column;gap:12px">
+      <div>
+        <label style="font-size:12.5px;color:#888;display:block;margin-bottom:4px">สถานะการติดตั้ง</label>
+        <select style="width:100%;padding:8px 12px;border-radius:8px;border:1.5px solid #dde1e7;font-size:14px">
+          <option>ติดตั้งสำเร็จ</option>
+          <option>รอดำเนินการ</option>
+          <option>มีปัญหา</option>
+        </select>
+      </div>
+      <div>
+        <label style="font-size:12.5px;color:#888;display:block;margin-bottom:4px">หมายเหตุ</label>
+        <textarea rows="3" style="width:100%;padding:8px 12px;border-radius:8px;border:1.5px solid #dde1e7;font-size:14px;font-family:inherit">ทำงานปกติ</textarea>
+      </div>
+    </div>
+    <div class="modal-btns">
+      <button class="btn-confirm" onclick="closeModal('editModal')">บันทึก</button>
+      <button class="btn-cancel" onclick="closeModal('editModal')">ยกเลิก</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openDetailModal() { document.getElementById('detailModal').style.display='flex'; }
+function openEditModal() { document.getElementById('editModal').style.display='flex'; }
+function closeModal(id) { document.getElementById(id).style.display='none'; }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IoT Support System</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', 'Noto Sans Thai', Arial, sans-serif; background: #0f1629; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px 20px; }
+.hero-title { color: #fff; font-size: 28px; font-weight: 800; text-align: center; margin-bottom: 8px; }
+.hero-sub { color: rgba(255,255,255,.55); font-size: 15px; text-align: center; margin-bottom: 48px; }
+.cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 720px; width: 100%; }
+.nav-card { background: #1a2340; border-radius: 16px; padding: 28px 26px; cursor: pointer; text-decoration: none; transition: transform .15s, box-shadow .15s; display: flex; flex-direction: column; gap: 10px; border: 1.5px solid rgba(255,255,255,.06); }
+.nav-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,.35); border-color: rgba(255,255,255,.15); }
+.card-num { font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.card-num.green { color: #06c755; }
+.card-num.blue { color: #4f8ef7; }
+.card-num.purple { color: #a78bfa; }
+.card-num.orange { color: #f5a623; }
+.card-icon { font-size: 36px; margin-bottom: 4px; }
+.card-title { color: #fff; font-size: 18px; font-weight: 700; }
+.card-desc { color: rgba(255,255,255,.5); font-size: 13px; line-height: 1.5; }
+.card-arrow { color: rgba(255,255,255,.3); font-size: 20px; margin-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="hero-title">🛰 IoT Support System</div>
+  <div class="hero-sub">เลือกหน้าที่ต้องการเข้าใช้งาน</div>
+  <div class="cards-grid">
+    <a href="index.html" class="nav-card">
+      <div class="card-num green">1. ลูกค้า</div>
+      <div class="card-icon">💬</div>
+      <div class="card-title">LINE Chat (จำลอง)</div>
+      <div class="card-desc">หน้าแชทสำหรับลูกค้าใช้งาน แจ้งปัญหา และติดต่อช่าง</div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="pages/technician.html" class="nav-card">
+      <div class="card-num blue">2. ช่าง</div>
+      <div class="card-icon">🔧</div>
+      <div class="card-title">ระบบช่างติดตั้ง</div>
+      <div class="card-desc">จัดการงานติดตั้ง บันทึกผล และดูสถานะลูกค้า</div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="pages/dashboard.html" class="nav-card">
+      <div class="card-num purple">3. แอดมิน</div>
+      <div class="card-icon">📊</div>
+      <div class="card-title">แดชบอร์ด (Admin)</div>
+      <div class="card-desc">ภาพรวมลูกค้า กราฟสถิติ และงานที่ต้องติดตาม</div>
+      <div class="card-arrow">→</div>
+    </a>
+    <a href="pages/scheduler.html" class="nav-card">
+      <div class="card-num orange">4. บอท</div>
+      <div class="card-icon">🤖</div>
+      <div class="card-title">Scheduler Bot</div>
+      <div class="card-desc">ตั้งเวลาส่งข้อความอัตโนมัติ พร้อมดูประวัติการส่ง</div>
+      <div class="card-arrow">→</div>
+    </a>
+  </div>
+</body>
+</html>
